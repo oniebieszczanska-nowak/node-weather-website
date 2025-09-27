@@ -1,0 +1,1 @@
+{"version":3,"file":"forecast.d.ts","sourceRoot":"","sources":["../../src/utils/forecast.ts"],"names":[],"mappings":"AAaA,KAAK,gBAAgB,GAAG,CAAC,KAAK,EAAE,MAAM,GAAG,SAAS,EAAE,IAAI,EAAE,MAAM,GAAG,SAAS,KAAK,IAAI,CAAC;AAEtF,eAAO,MAAM,QAAQ,GAAI,UAAU,MAAM,EAAE,WAAW,MAAM,EAAE,UAAU,gBAAgB,KAAG,IAe1F,CAAC"}
