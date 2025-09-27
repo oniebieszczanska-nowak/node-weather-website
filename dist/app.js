@@ -5,11 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
 const express_1 = __importDefault(require("express"));
+// @ts-ignore
 const hbs_1 = __importDefault(require("hbs"));
 const geocode_1 = require("./utils/geocode");
 const forecast_1 = require("./utils/forecast");
 const app = (0, express_1.default)();
 const port = parseInt(process.env.PORT || '3000', 10);
+console.log('🚀 Server starting with TypeScript hot reloading enabled!');
 // Define paths for Express config
 const publicDirPath = path_1.default.join(__dirname, '../public');
 const viewsPath = path_1.default.join(__dirname, '../templates/views');

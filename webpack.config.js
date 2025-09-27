@@ -2,8 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
-  mode: 'development',
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === 'production';
+  console.log('Webpack mode:', argv.mode);
+  console.log('Is production:', isProduction);
+  
+  return {
+    mode: argv.mode || 'development',
   entry: {
     app: './public/js/app.ts'
   },
@@ -39,19 +44,16 @@ module.exports = {
       ]
     })
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 8080,
-    hot: true,
-    proxy: {
-      '/': {
-        target: 'http://localhost:3000',
-        changeOrigin: true
-      }
+  ...(isProduction ? {} : {
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'public'),
+      },
+      compress: true,
+      port: 8080,
+      hot: true
     }
-  },
-  devtool: 'source-map'
+  }),
+  devtool: isProduction ? false : 'source-map'
+  };
 };

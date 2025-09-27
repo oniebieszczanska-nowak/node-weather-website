@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.geocode = void 0;
+// @ts-ignore
 const postman_request_1 = __importDefault(require("postman-request"));
 const geocode = (address, callback) => {
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=pk.eyJ1Ijoib2xnYWJhaW4iLCJhIjoiY2xvNXJxZWhoMGN0dTJtbndtaGRibXh0eSJ9.N-H3Krf8ey5M2-tYgSOnzw&limit=1`;
