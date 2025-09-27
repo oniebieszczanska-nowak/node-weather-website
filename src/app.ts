@@ -1,5 +1,6 @@
 import path from 'path';
 import express, { Request, Response } from 'express';
+// @ts-ignore
 import hbs from 'hbs';
 import { geocode } from './utils/geocode';
 import { forecast } from './utils/forecast';

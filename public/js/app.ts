@@ -10,10 +10,8 @@ const search = document.querySelector('input')
 const errorMessage = document.querySelector('#error-message')
 const weatherMessage = document.querySelector('#weather-message')
 
-console.log(weatherForm);
-
 const fetchWeather = (address: string) => {
-    fetch(`http://localhost:3000/weather?address=${address}`)
+    fetch(`/weather?address=${address}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -34,6 +32,7 @@ const fetchWeather = (address: string) => {
             if (weatherMessage) weatherMessage.innerHTML = '';
         });
 }
+
 weatherForm?.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search?.value;
