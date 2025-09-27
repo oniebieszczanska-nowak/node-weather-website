@@ -10,6 +10,8 @@ const search = document.querySelector('input')
 const errorMessage = document.querySelector('#error-message')
 const weatherMessage = document.querySelector('#weather-message')
 
+console.log(weatherForm);
+
 const fetchWeather = (address: string) => {
     fetch(`http://localhost:3000/weather?address=${address}`)
         .then((response) => {
